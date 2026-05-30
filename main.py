@@ -26,8 +26,6 @@ for j in range(0, M):
     frecuencia = sum(individuos[:, j]) / (2*N)
     frecuencias_alelo.append(frecuencia)
 
-frecuencias_alelo = np.array(frecuencias_alelo)
-
 normalizado_patterson = []
 
 for i in range(0, N):
@@ -41,6 +39,9 @@ for i in range(0, N):
             num = individuos[i][j] - 2*frecuencias_alelo[j]
             den = np.sqrt(2*p*(1-p))
             normal.append(num/den)
-
+        
     normalizado_patterson.append(normal)
+
+normalizado_patterson = np.array(normalizado_patterson)
+u, s, vt = np.linalg.svd(normalizado_patterson)
         
