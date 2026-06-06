@@ -44,4 +44,19 @@ for i in range(0, N):
 
 normalizado_patterson = np.array(normalizado_patterson)
 u, s, vt = np.linalg.svd(normalizado_patterson)
+
+PC = u * s
+PC1 = PC[:, 0]
+PC2 = PC[:, 1]
+
+fig, ax = plt.subplots()
+ax.scatter(PC1, PC2)
+plt.title("Gráfico de Dispersión: PC1 vs PC2")
+plt.xlabel("PC1")
+plt.ylabel("PC2")
+plt.grid(color='gray', linestyle='--', linewidth=0.3)
+plt.axhline(0, color='gray', linewidth=1, linestyle='-')
+plt.axvline(0, color='gray', linewidth=1, linestyle='-')
+plt.savefig("grafico de dispersión.pdf")
+plt.show()
         
