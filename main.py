@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
+import seaborn as sns
 
 N = 30
 M = 100
